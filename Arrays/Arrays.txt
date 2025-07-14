@@ -20,3 +20,14 @@ Operations on Arrays
  
 Binary Search 
     prequisite - sorted array
+
+        pseudocode
+
+            start=0 end=n-1
+            while(start<=end)
+                find mid [(start+end)/2]
+                    compare mid & key
+                        mid == key found
+                        mid > key left
+                        mid < key right
+                        
