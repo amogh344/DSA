@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 public class ArraysCC {
     // public static void update(int marks[])
