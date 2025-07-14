@@ -18,3 +18,5 @@ Operations on Arrays
 
         
  
+Binary Search 
+    prequisite - sorted array
