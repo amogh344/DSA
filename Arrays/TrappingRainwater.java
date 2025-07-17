@@ -1,11 +1,10 @@
-//given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
-//auxilary arrays
-
 public class TrappingRainwater {
     public static int trappedRainwater(int height[]) {
+        int n = height.length;
+        if (n == 0)
+            return 0;
 
         // calculate left max boundary
-        int n = height.length;
         int leftMax[] = new int[n];
         leftMax[0] = height[0];
         for (int i = 1; i < n; i++) {
@@ -16,25 +15,21 @@ public class TrappingRainwater {
         int rightMax[] = new int[n];
         rightMax[n - 1] = height[n - 1];
         for (int i = n - 2; i >= 0; i--) {
-            rightMax[i] = Math.max(height[i], rightMax[i + 1]);
+            rightMax[i] = Math.max(rightMax[i + 1], height[i]);
         }
-        int trappedWater = 0;
 
-        // loop
+        // calculate trapped water
+        int trappedWater = 0;
         for (int i = 0; i < n; i++) {
             int waterLevel = Math.min(leftMax[i], rightMax[i]);
             trappedWater += waterLevel - height[i];
         }
 
         return trappedWater;
-        // waterlevel=min(leftmax,rightmax)
-        // trapped water = waterlevel - height[i]
-
     }
 
     public static void main(String[] args) {
         int height[] = { 4, 2, 0, 6, 3, 2, 5 };
-        System.out.println("Volume of Trapped Rainwater : " + trappedRainwater(height));
+        System.out.println("Trapped rainwater: " + trappedRainwater(height));
     }
-
 }
