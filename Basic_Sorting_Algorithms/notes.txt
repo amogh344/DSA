@@ -3,3 +3,6 @@ Sorting Algorithms
 
     Bubble Sort:
         large elements come to the end of the array by swapping with adjacent elements
+
+    Selection Sort:
+        
